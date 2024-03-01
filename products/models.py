@@ -6,3 +6,4 @@ class Product(models.Model):          # parent class -> the class inherits all t
     title       = models.TextField()
     description = models.TextField()
     price       = models.TextField()
+    summary     = models.TextField(default = 'Whatever you want.')
