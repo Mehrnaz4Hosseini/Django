@@ -10,7 +10,13 @@ class Product(models.Model):          # parent class -> the class inherits all t
                                                           # null = True  -> description in database can be null
     price       = models.DecimalField(max_digits=10, decimal_places=2)
     summary     = models.TextField(blank=False, null=False) # summary is required
-    featured    = models.BooleanField(null=True) # null=True / default=value
+    featured    = models.BooleanField(null=True) # null=True / default=value 
+    
 
-    def __str__(self) :        
-        return self.title + ' ' + self.summary   # show this instead of just the title in the list of products on site
+class Customer(models.Model):
+    FirstName = models.CharField(max_length=30)
+    LastName  = models.CharField(max_length=30)
+    age       = models.IntegerField()
+
+    def __str__ (self):
+        return self.FirstName + ' ' + self.LastName # show this instead of just the title in the list of Customer on site
