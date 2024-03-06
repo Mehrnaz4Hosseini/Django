@@ -17,6 +17,8 @@ class CustomerSerializer(serializers.Serializer):
         return Customer.objects.create(validated_data)
     
     def update(self, instance, validated_data):
-        instance.FirstName = validated_data.get('FirstName', validated_data.FirstName)
-        instance.LastName = validated_data.get('LastName', validated_data.LastName)
-        instance.age = validated_data.get('age', validated_data.age)
+        instance.FirstName = validated_data.get('FirstName', instance.FirstName)
+        instance.LastName = validated_data.get('LastName', instance.LastName)
+        instance.age = validated_data.get('age', instance.age)
+        instance.save()
+        return instance
