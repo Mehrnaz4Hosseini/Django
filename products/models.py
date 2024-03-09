@@ -14,8 +14,8 @@ class Product(models.Model):          # parent class -> the class inherits all t
     
 
 class Customer(models.Model):
-    FirstName = models.CharField(max_length=30)
-    LastName  = models.CharField(max_length=30)
+    firstName = models.CharField(max_length=30)
+    lastName  = models.CharField(max_length=30)
     age       = models.IntegerField()
 
     def __str__ (self):
