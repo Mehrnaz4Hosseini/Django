@@ -22,3 +22,10 @@ class Comment(models.Model):
     review_id = models.IntegerField()
     body = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
+
+
+class Report(models.Model):
+    review = models.CharField(max_length=200)
+    user = models.CharField(max_length=200)
+    reason = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
